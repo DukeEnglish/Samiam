@@ -1,0 +1,186 @@
+net
+{
+	propagationenginegenerator1791944048146838126L = "edu.ucla.belief.approx.BeliefPropagationSettings@711e9690";
+	recoveryenginegenerator6944530267470113528l = "edu.ucla.util.SettingsImpl@53b2f5b7";
+	node_size = (130.0 55.0);
+	huginenginegenerator3061656038650325130L = "edu.ucla.belief.inference.JoinTreeSettings@6f833d6e";
+}
+
+node CV
+{
+	states = ("Perfect" "Good" "Bad" );
+	position = (397 -356);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable1";
+	label = "CV";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Gender
+{
+	states = ("Male" "Female" );
+	position = (666 -208);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable6";
+	label = "Gender";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Height
+{
+	states = ("Positive" "Negative" );
+	position = (829 -209);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable4";
+	label = "Height";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Interview
+{
+	states = ("Perfect" "Good" "Bad" );
+	position = (719 -370);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable2";
+	label = "Interview";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Offer
+{
+	states = ("Yes" "No" );
+	position = (565 -507);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable0";
+	label = "Offer";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Face
+{
+	states = ("Headsomeorbeautiful" "Normal" "Ugly" );
+	position = (1154 -295);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable3";
+	label = "Face";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Layout
+{
+	states = ("Good" "Bad" );
+	position = (413 -255);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable0";
+	label = "Layout";
+	excludepolicy = "include whole CPT";
+}
+node Language
+{
+	states = ("Bilingual" "Monolingual" );
+	position = (988 -235);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable5";
+	label = "Language";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Content
+{
+	states = ("Excellent" "Colour" "Poor" );
+	position = (234 -255);
+	diagnosistype = "AUXILIARY";
+	DSLxSUBMODEL = "Root Submodel";
+	ismapvariable = "false";
+	ID = "variable1";
+	label = "Content";
+	excludepolicy = "include whole CPT";
+}
+potential ( CV | Layout Content )
+{
+	data = (((	0.85	0.1	0.05	)
+		(	0.6	0.35	0.05	)
+		(	0.05	0.15	0.8	))
+		((	0.7	0.2	0.1	)
+		(	0.3	0.3	0.4	)
+		(	0.0	0.1	0.9	)));
+}
+potential ( Gender | )
+{
+	data = (	0.5	0.5	);
+}
+potential ( Height | )
+{
+	data = (	0.5	0.5	);
+}
+potential ( Interview | Gender Height Language Face )
+{
+	data = (((((	0.9	0.1	0.0	)
+		(	0.95	0.05	0.0	)
+		(	0.85	0.1	0.05	))
+		((	0.8	0.15	0.05	)
+		(	0.85	0.15	0.0	)
+		(	0.75	0.2	0.05	)))
+		(((	0.9	0.1	0.0	)
+		(	0.95	0.05	0.0	)
+		(	0.85	0.1	0.05	))
+		((	0.8	0.15	0.05	)
+		(	0.85	0.15	0.0	)
+		(	0.5	0.45	0.05	))))
+		((((	1.0	0.0	0.0	)
+		(	0.95	0.05	0.0	)
+		(	1.0	0.0	0.0	))
+		((	1.0	0.0	0.0	)
+		(	0.9	0.1	0.0	)
+		(	0.85	0.15	0.0	)))
+		(((	1.0	0.0	0.0	)
+		(	0.95	0.05	0.0	)
+		(	0.9	0.1	0.0	))
+		((	1.0	0.0	0.0	)
+		(	0.6551724137931034	0.3448275862068966	0.0	)
+		(	0.85	0.15	0.0	)))));
+}
+potential ( Offer | CV Interview )
+{
+	data = (((	0.9	0.1	)
+		(	0.8	0.2	)
+		(	0.1	0.9	))
+		((	0.9	0.1	)
+		(	0.85	0.15	)
+		(	0.1	0.9	))
+		((	0.7	0.3	)
+		(	0.6	0.4	)
+		(	0.05	0.95	)));
+}
+potential ( Face | )
+{
+	data = (	0.5	0.5	0.0	);
+}
+potential ( Layout | )
+{
+	data = (	0.5	0.5	);
+}
+potential ( Language | )
+{
+	data = (	0.5	0.5	);
+}
+potential ( Content | )
+{
+	data = (	0.5	0.5	0.0	);
+}
